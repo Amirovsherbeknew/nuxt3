@@ -29,8 +29,8 @@
       ]);
       const newTodoText = ref<string>('');
         onMounted(() => {
-  console.log(`the component is now mounted.`)
-})
+           console.log(`the component is now mounted.`)
+       })
       const addTodo = () => {
         const newTodo: Todo = { id: Date.now(), text: newTodoText.value };
         todos.value.push(newTodo);
