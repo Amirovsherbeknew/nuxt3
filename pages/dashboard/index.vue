@@ -4,3 +4,6 @@
         <Navbar/>
     </div>
 </template>
+<script>
+
+</script>

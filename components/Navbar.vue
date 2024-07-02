@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>Todo List</h2>
+    <UserAdded v-model:title="toValue"/>
     <a-tabs v-model:activeKey="activeKey">
     <a-tab-pane key="1">
       <template #tab>
@@ -20,8 +21,7 @@
   </a-tabs>
     <ul>
       <li v-for="item in todoList">
-        <b>{{ item.id }}</b> <span>{{ item.title }}</span><input type="checkbox" :checked="item.verifyed"/>
-          @change="Verifyed(item.id, $event)" />
+        <b>{{ item.id }}</b> <span>{{ item.title }}</span><input type="checkbox" :checked="item.verifyed"  @change="Verifyed(item.id, $event)" />
       </li>
     </ul>
     <input type="text" v-model="toValue">
@@ -29,7 +29,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { watch } from 'vue'
 interface todoElmType {
   id: number,
   title: string,
